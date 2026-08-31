@@ -1,0 +1,6 @@
+# dsh-ainvestor：AiInvestor 分析 Copilot。
+# 启动/连接 AiInvestor-dsh 后端（默认 127.0.0.1:8766），注册 A股分析工具，
+# 并注入投资方法论提示词段落。
+- insert:
+    - id: ainvestor
+      name: 'dsh-ainvestor'
