@@ -1,9 +1,7 @@
 /**
  * Investment methodology prompt section.
  *
- * Distilled from the AiInvestor skills DAG (backend/app/agent/skills/*.json
- * prompt_template discipline rules) and the weekly research methodology
- * constraints (backend/app/research/weekly/methodology.py, D-16..D-19).
+ * Distilled from the AiInvestor skills DAG and weekly research methodology.
  * Order 150 places it in the tool-guidance band (100-199).
  */
 

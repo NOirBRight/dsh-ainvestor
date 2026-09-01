@@ -1,112 +1,136 @@
 /**
  * dsh-ainvestor — AiInvestor analysis copilot for DeepSeek Harness.
  *
- * Host-only plugin (no client bundle). On load it:
- *  1. attaches to (or spawns) the AiInvestor-dsh fork backend on port 8766,
- *  2. registers the ainvestor_* analysis tools (Chan, scoring, financials,
- *     bars, knowledge search) against the backend HTTP API,
- *  3. injects the investment-methodology system prompt section.
+ * LAB-only plugin with explicit attach/spawn backend ownership.
  *
- * The backend spawn is disposed with the plugin fiber, so unloading the
- * plugin also stops a backend it started (but never one it merely attached to).
+ * @module dsh-ainvestor
  */
 
 import type { Context } from '@deepseek-ai/cordis'
+import type {} from '@deepseek-ai/dsh-tools'
+import type {} from '@deepseek-ai/dsh-system-prompt'
 
-import { ensureBackend, resolveBackendConfig, type BackendConfig, type BackendHandle } from './backend.ts'
-import { createTools, type ToolDefinition } from './tools.ts'
+import { ensureBackend, StartupCancellationError, type BackendHandle } from './backend.ts'
+import { Config as ConfigSchema, resolveBackendSpec } from './config.ts'
+import type { BackendSpec } from './config.ts'
 import { METHODOLOGY_SECTION } from './methodology.ts'
+import { createTools } from './tools.ts'
 
+/** Cordis loader name. */
 export const name = 'dsh-ainvestor'
-export const inject = ['tools']
 
-export type Config = Partial<BackendConfig>
+/** Services required by this host-only plugin. */
+export const inject = ['tools', 'systemPrompt'] as const
 
-interface ToolsService {
-  register(definition: ToolDefinition): unknown
-}
+/** Standard Schema consumed by the official Cordis loader. */
+export const Config = ConfigSchema
 
-interface SystemPromptService {
-  section(section: { name: string; order: number; text: string }): unknown
-}
+/** Resolved plugin configuration. */
+export type Config = BackendSpec
 
 function log(line: string): void {
-  process.stderr.write(`[dsh-ainvestor] ${line}\n`)
+  process.stderr.write('[dsh-ainvestor] ' + line + '\n')
 }
 
-function errMsg(error: unknown): string {
-  return error instanceof Error ? error.message : String(error)
-}
+/**
+ * Register the backend-owned tools and methodology section with Cordis.
+ * Startup is cancellable, and a startup failure rejects after reverse rollback
+ * of every contribution acquired before the failure.
+ *
+ * @param ctx - Official Cordis plugin context.
+ * @param rawConfig - Loader-resolved or programmatic plugin configuration.
+ * @returns A promise that settles after backend startup and registration.
+ * @throws {Error} If configuration, backend startup, registration, or rollback fails.
+ */
+export async function apply(ctx: Context, rawConfig: unknown): Promise<void> {
+  const spec = resolveBackendSpec(rawConfig)
+  let startup: Promise<void> | undefined
 
-/** Tie the backend handle to this plugin fiber's lifetime. */
-function bindDisposal(ctx: Context, handle: BackendHandle): void {
-  const anyCtx = ctx as unknown as {
-    effect?: (callback: () => () => void) => unknown
-    on: (name: string, listener: () => void) => unknown
-  }
-  const dispose = (): void => {
-    try {
-      handle.dispose()
-    } catch (error) {
-      log(`WARN backend dispose failed: ${errMsg(error)}`)
+  ctx.effect(() => {
+    const controller = new AbortController()
+    let backend: BackendHandle | undefined
+    const contributions: Array<() => void | Promise<void>> = []
+    let cleanupPromise: Promise<void> | undefined
+
+    const cleanup = (): Promise<void> => {
+      cleanupPromise ??= (async (): Promise<void> => {
+        controller.abort()
+        const errors: unknown[] = []
+        for (let index = contributions.length - 1; index >= 0; index -= 1) {
+          const dispose = contributions[index]
+          if (dispose === undefined) continue
+          try {
+            await dispose()
+          } catch (error) {
+            errors.push(error)
+          }
+        }
+        contributions.length = 0
+        if (backend !== undefined) {
+          const ownedBackend = backend
+          backend = undefined
+          try {
+            await ownedBackend.dispose()
+          } catch (error) {
+            errors.push(error)
+          }
+        }
+        if (errors.length > 0) throw new AggregateError(errors, 'dsh-ainvestor: lifecycle cleanup failed')
+      })()
+      return cleanupPromise
     }
-  }
-  if (typeof anyCtx.effect === 'function') {
-    anyCtx.effect(() => () => {
-      dispose()
-    })
-  } else {
-    anyCtx.on('dispose', dispose)
-  }
-}
 
-async function run(ctx: Context, config: Config | undefined): Promise<void> {
-  const backendConfig = resolveBackendConfig(config)
+    startup = (async (): Promise<void> => {
+      try {
+        const acquiredBackend = await ensureBackend(spec, log, controller.signal)
+        backend = acquiredBackend
+        if (controller.signal.aborted) {
+          await cleanup()
+          return
+        }
+        const definitions = createTools(spec.baseUrl, spec.http)
+        for (const definition of definitions) {
+          if (controller.signal.aborted) {
+            await cleanup()
+            return
+          }
+          contributions.push(ctx.tools.register(definition))
+        }
+        if (controller.signal.aborted) {
+          await cleanup()
+          return
+        }
+        contributions.push(ctx.systemPrompt.section(METHODOLOGY_SECTION))
+        if (controller.signal.aborted) {
+          await cleanup()
+          return
+        }
+        log('ready mode=' + backend.mode + ' baseUrl=' + spec.baseUrl + ' tools=' + definitions.length)
+      } catch (error) {
+        let cleanupFailed = false
+        let cleanupError: unknown
+        try {
+          await cleanup()
+        } catch (errorDuringCleanup) {
+          cleanupFailed = true
+          cleanupError = errorDuringCleanup
+        }
+        if (cleanupFailed) {
+          const errors = error instanceof StartupCancellationError ? [cleanupError] : [error, cleanupError]
+          throw new AggregateError(errors, 'dsh-ainvestor: startup and cleanup failed')
+        }
+        if (!(error instanceof StartupCancellationError)) throw error
+      }
+    })()
 
-  let handle: BackendHandle
-  try {
-    handle = await ensureBackend(backendConfig, log)
-  } catch (error) {
-    log(`FATAL backend unavailable: ${errMsg(error)} — tools not registered`)
-    return
-  }
-  bindDisposal(ctx, handle)
-
-  const tools = ctx.get('tools') as ToolsService | undefined
-  if (tools === undefined) {
-    log('FATAL tools service missing — the tree may be tearing down')
-    return
-  }
-  const definitions = createTools(backendConfig.baseUrl)
-  let registered = 0
-  for (const definition of definitions) {
-    try {
-      tools.register(definition)
-      registered += 1
-    } catch (error) {
-      log(`WARN could not register ${definition.name}: ${errMsg(error)}`)
+    return async (): Promise<void> => {
+      controller.abort()
+      if (startup === undefined) throw new Error('dsh-ainvestor: lifecycle startup was not initialized')
+      await startup
+      await cleanup()
     }
-  }
+  }, 'dsh-ainvestor.lifecycle')
 
-  const systemPrompt = ctx.get('systemPrompt') as SystemPromptService | undefined
-  if (systemPrompt === undefined) {
-    log('WARN systemPrompt service missing — methodology section not injected')
-  } else {
-    try {
-      systemPrompt.section(METHODOLOGY_SECTION)
-    } catch (error) {
-      log(`WARN methodology section failed: ${errMsg(error)}`)
-    }
-  }
-
-  log(
-    `ready mode=${handle.mode} baseUrl=${backendConfig.baseUrl} ` +
-      `tools=${registered}/${definitions.length} methodology=${systemPrompt !== undefined ? 'yes' : 'no'}`,
-  )
-}
-
-export function apply(ctx: Context, config?: Config): void {
-  void run(ctx, config).catch((error) => {
-    log(`FATAL ${error instanceof Error ? `${error.message}\n${error.stack ?? ''}` : String(error)}`)
-  })
+  if (startup === undefined) throw new Error('dsh-ainvestor: lifecycle startup was not initialized')
+  return startup
 }

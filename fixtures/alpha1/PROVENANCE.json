@@ -1,0 +1,1601 @@
+{
+  "schemaVersion": 2,
+  "fixtureSet": "clean-alpha1+registry",
+  "source": {
+    "repository": "https://github.com/deepseek-ai/deepseek-harness.git",
+    "checkout": "dsh-v0.1.2-alpha.1-cd5ef8148158",
+    "tag": "dsh-v0.1.2-alpha.1",
+    "commit": "cd5ef8148158c3a752a658978873241fdf8e2bbc",
+    "cleanCheckout": true,
+    "packagesBuiltFromThisCheckout": true
+  },
+  "registry": {
+    "url": "https://registry.npmjs.org/",
+    "recursive": true,
+    "platform": "linux-x64",
+    "packageCount": 68
+  },
+  "upstreamArtifactGaps": [
+    {
+      "package": "@standard-schema/spec",
+      "version": "1.1.0",
+      "exportTarget": "./src/index.ts",
+      "reason": "The official published tarball declares this source export but does not ship the target. It is not used by the plugin runtime or its required runtime import closure; the root type import resolves through the published root export."
+    },
+    {
+      "package": "vitest",
+      "version": "4.1.11",
+      "exportTarget": "./src/*",
+      "reason": "The registry tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-agent",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-attachment",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-brand",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-code-runtime",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-invariants",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-llm",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-scope",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-session",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-system-prompt",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-timeout",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-tools",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-typert-protocol",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-user-approval",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    },
+    {
+      "package": "@deepseek-ai/dsh-util-crypto",
+      "version": "0.1.2-alpha.1",
+      "exportTarget": "./src/*",
+      "reason": "The official published tarball declares a source wildcard but ships no package/src files. This source-only target is not used by the plugin or runtime closure."
+    }
+  ],
+  "tarballs": {
+    "ansis-4.3.1.tgz": {
+      "package": "ansis",
+      "version": "4.3.1",
+      "source": "registry",
+      "bytes": 3499,
+      "sha256": "8ec3d95f60f1f951a3b44439cf29d89e27482467e2a642069e7cf512a134e5d6",
+      "tarRoot": "package/"
+    },
+    "assertion-error-2.0.1.tgz": {
+      "package": "assertion-error",
+      "version": "2.0.1",
+      "source": "registry",
+      "bytes": 2472,
+      "sha256": "73f4a5b3c9b38e4f3123188d4d85a7933ee5fe2f77f8ff04e8867b0938c20f56",
+      "tarRoot": "package/"
+    },
+    "cac-7.0.0.tgz": {
+      "package": "cac",
+      "version": "7.0.0",
+      "source": "registry",
+      "bytes": 13177,
+      "sha256": "fe0657b71db6eeef12010d16c9b0850ad984efe695b7c100977a9238c8fa3bf0",
+      "tarRoot": "package/"
+    },
+    "chai-6.2.2.tgz": {
+      "package": "chai",
+      "version": "6.2.2",
+      "source": "registry",
+      "bytes": 30154,
+      "sha256": "702cd574375345c56198e96b52f55abeb445cd73a52cf7f9ee0d57bba4055b58",
+      "tarRoot": "package/"
+    },
+    "convert-source-map-2.0.0.tgz": {
+      "package": "convert-source-map",
+      "version": "2.0.0",
+      "source": "registry",
+      "bytes": 4952,
+      "sha256": "17f7253ec7e4e09f68371192fded2b5241a5cf85e610e5059b1d49e878fe1898",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-cordis-4.0.1.tgz": {
+      "package": "@deepseek-ai/cordis",
+      "version": "4.0.1",
+      "source": "alpha1",
+      "bytes": 55438,
+      "sha256": "b07c794237ef9ec3b3bf86c8bdd8de456ae5c5ed45fd495f827884bc27c3c338",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-cosmokit-1.8.2.tgz": {
+      "package": "@deepseek-ai/cosmokit",
+      "version": "1.8.2",
+      "source": "alpha1",
+      "bytes": 13976,
+      "sha256": "74986e0a5d2b7984607d5913974b083d30efe31ac5c25a8b1efc90b06fa4ec90",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-agent-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-agent",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 43125,
+      "sha256": "a1157242a6c221ae42fc5145509c361803ee070851289c0b04ef3a5fa9a261fb",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-attachment-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-attachment",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 17796,
+      "sha256": "a641b4fea87761e12959b095360f482b885df1f759f0be8426b6a0ae5848c4f9",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-brand-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-brand",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 6245,
+      "sha256": "285217a5f5d2dd70bfc1137ba8d88bbde0f0aeae57b8bc8304bec6251eee3778",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-code-runtime-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-code-runtime",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 15152,
+      "sha256": "a057a2811d5554cc917f7ae822701666f0f179eb9c89e72fc3904a5740f5a5a8",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-invariants-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-invariants",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 13389,
+      "sha256": "8158af724b80392c1e4aec4dc7e710811a76b61578b40bf59d87592ffc263a47",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-llm-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-llm",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 88656,
+      "sha256": "51c20a7330793056890cc0b97a161568e378315c4fab0372762b628002b37b61",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-scope-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-scope",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 15116,
+      "sha256": "abe87a14d9ac8840a53b30e047a335e0f9e23f385cf3f87caa482c360a6dd57a",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-session-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-session",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 85691,
+      "sha256": "87aa728eb14e6c52d41fea8edf7e34d9a624c41f551ee33b0535e733aa8d1951",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-system-prompt-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-system-prompt",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 19271,
+      "sha256": "bf01c0a35057d5d493ebe0e360e95818eb0274223503c1a0e0dcc74b1ba63148",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-timeout-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-timeout",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 10892,
+      "sha256": "2abed7a638df6a3650d7e46392d9d7fe731149316b4f564556f6583ed1a400a7",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-tools-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-tools",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 141035,
+      "sha256": "c6536482778635dbad61666754997c79b11ae6c49346d56abbe8920b76e08bf3",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-typert-protocol-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-typert-protocol",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 17539,
+      "sha256": "13b17a1105bb3112987a10d1d3a973d7142457bb9955275faeb95bfb03e36ab3",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-user-approval-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-user-approval",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 19395,
+      "sha256": "43a371139435c178fee97de47bfe6f4f5d00aab46383d8be51bc7c1391456bd2",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-dsh-util-crypto-0.1.2-alpha.1.tgz": {
+      "package": "@deepseek-ai/dsh-util-crypto",
+      "version": "0.1.2-alpha.1",
+      "source": "alpha1",
+      "bytes": 5263,
+      "sha256": "bd10d2ca67dadb054c04e427e59504c6f25bbd48bcf65e7503e2914d77068fd6",
+      "tarRoot": "package/"
+    },
+    "deepseek-ai-schemastery-3.18.1.tgz": {
+      "package": "@deepseek-ai/schemastery",
+      "version": "3.18.1",
+      "source": "alpha1",
+      "bytes": 25098,
+      "sha256": "a64b5bed661f303cb27a44bc3942142da953460cca44571f89d960f35a74b682",
+      "tarRoot": "package/"
+    },
+    "defu-6.1.7.tgz": {
+      "package": "defu",
+      "version": "6.1.7",
+      "source": "registry",
+      "bytes": 4897,
+      "sha256": "c9a6777f6837633e4eba91ed78dbd0be2d27ab0d9c53948dac6b927c819fbcd3",
+      "tarRoot": "package/"
+    },
+    "detect-libc-2.1.2.tgz": {
+      "package": "detect-libc",
+      "version": "2.1.2",
+      "source": "registry",
+      "bytes": 7776,
+      "sha256": "270dec0fc06cff86481da8af2dd8f18dee6b602790b14ef0e1c2c18d7da39427",
+      "tarRoot": "package/"
+    },
+    "dts-resolver-3.0.0.tgz": {
+      "package": "dts-resolver",
+      "version": "3.0.0",
+      "source": "registry",
+      "bytes": 2942,
+      "sha256": "365fcea095e942a48f3a05680433f2822a3bfe7fec5225590cde700d9a734cd4",
+      "tarRoot": "package/"
+    },
+    "empathic-2.0.1.tgz": {
+      "package": "empathic",
+      "version": "2.0.1",
+      "source": "registry",
+      "bytes": 5305,
+      "sha256": "c21347598fb38926d8c465c0f08ae9c485f2fe28b07b888eba9b3fbed721b134",
+      "tarRoot": "package/"
+    },
+    "es-module-lexer-2.3.2.tgz": {
+      "package": "es-module-lexer",
+      "version": "2.3.2",
+      "source": "registry",
+      "bytes": 59919,
+      "sha256": "99b4da5f3bd7cc4483f3d892ee9037b10a1da26ac5bec374038cf0bd4a52e1a7",
+      "tarRoot": "package/"
+    },
+    "estree-walker-3.0.3.tgz": {
+      "package": "estree-walker",
+      "version": "3.0.3",
+      "source": "registry",
+      "bytes": 3965,
+      "sha256": "bbbdfdc16cd9ef099e474f55a4aa344103c01853727136a76ee165fa9d1c72b3",
+      "tarRoot": "package/"
+    },
+    "expect-type-1.4.0.tgz": {
+      "package": "expect-type",
+      "version": "1.4.0",
+      "source": "registry",
+      "bytes": 31799,
+      "sha256": "c44b3fea7bcae8a4ce328b457da171e8debf553cbeb6a049817975b8e050e3a1",
+      "tarRoot": "package/"
+    },
+    "fdir-6.5.0.tgz": {
+      "package": "fdir",
+      "version": "6.5.0",
+      "source": "registry",
+      "bytes": 9742,
+      "sha256": "241ddcd9f31e2a1fca405326017dbb8333ce174198e887f0f96387c29f0d365e",
+      "tarRoot": "package/"
+    },
+    "get-tsconfig-5.0.0-beta.5.tgz": {
+      "package": "get-tsconfig",
+      "version": "5.0.0-beta.5",
+      "source": "registry",
+      "bytes": 34459,
+      "sha256": "3fbc270d56877522ed7dd1d1b2670652c3511f8d68c334a3024357b86c6310f5",
+      "tarRoot": "package/"
+    },
+    "hookable-6.1.1.tgz": {
+      "package": "hookable",
+      "version": "6.1.1",
+      "source": "registry",
+      "bytes": 7696,
+      "sha256": "a0aad5680c3ae5237f8c8bb9b77693a1b817ccdd5ad53a9a5cab34d69ff817e3",
+      "tarRoot": "package/"
+    },
+    "import-without-cache-0.4.0.tgz": {
+      "package": "import-without-cache",
+      "version": "0.4.0",
+      "source": "registry",
+      "bytes": 3346,
+      "sha256": "a039172ce4ff50a285d7cb421d1e1dc8a688eadb0ca284e0b078d2e745ea36b1",
+      "tarRoot": "package/"
+    },
+    "jridgewell-sourcemap-codec-1.6.0.tgz": {
+      "package": "@jridgewell/sourcemap-codec",
+      "version": "1.6.0",
+      "source": "registry",
+      "bytes": 18401,
+      "sha256": "f30a35f6af8c347d01b8ff2f8662272f7d986cf21b916704d86c249a90b97e25",
+      "tarRoot": "package/"
+    },
+    "lightningcss-1.33.0.tgz": {
+      "package": "lightningcss",
+      "version": "1.33.0",
+      "source": "registry",
+      "bytes": 87655,
+      "sha256": "d492f4278bb7234ceaa3c2638ef944e108ea17a23db7c6a2367c14fa725598cf",
+      "tarRoot": "package/"
+    },
+    "lightningcss-linux-x64-gnu-1.33.0.tgz": {
+      "package": "lightningcss-linux-x64-gnu",
+      "version": "1.33.0",
+      "source": "registry",
+      "bytes": 3855795,
+      "sha256": "fd485dfd57082c4ef864dd867fa87fd8e1a9b5d58ee85c2b76e28e42c8f3e1d3",
+      "tarRoot": "package/"
+    },
+    "magic-string-0.30.21.tgz": {
+      "package": "magic-string",
+      "version": "0.30.21",
+      "source": "registry",
+      "bytes": 89981,
+      "sha256": "fa49762567dca44e8ccf327f365d250e04c482bf7a4ed0ae7d03659b09ac656f",
+      "tarRoot": "package/"
+    },
+    "nanoid-3.3.18.tgz": {
+      "package": "nanoid",
+      "version": "3.3.18",
+      "source": "registry",
+      "bytes": 5713,
+      "sha256": "b9dc81cb403ea2510314dd2d1ad8d71934f325db90c1b43805e781b87e3fb009",
+      "tarRoot": "package/"
+    },
+    "obug-2.1.4.tgz": {
+      "package": "obug",
+      "version": "2.1.4",
+      "source": "registry",
+      "bytes": 10237,
+      "sha256": "87618f4dd0510e47759d5527a34c05aae0752c5aef8417e30898a8db4afb5375",
+      "tarRoot": "package/"
+    },
+    "oxc-project-types-0.146.0.tgz": {
+      "package": "@oxc-project/types",
+      "version": "0.146.0",
+      "source": "registry",
+      "bytes": 7707,
+      "sha256": "04142bd8d110a798d4c52e4f0fa4aa8b04aedf235a63ee8f515cc6ca98b71f4f",
+      "tarRoot": "package/"
+    },
+    "pathe-2.0.3.tgz": {
+      "package": "pathe",
+      "version": "2.0.3",
+      "source": "registry",
+      "bytes": 10514,
+      "sha256": "6e3b73bc5dbb7f8a108ff5d8459b07da04062e822c662339416525510696df36",
+      "tarRoot": "package/"
+    },
+    "picocolors-1.1.1.tgz": {
+      "package": "picocolors",
+      "version": "1.1.1",
+      "source": "registry",
+      "bytes": 2625,
+      "sha256": "d3aedb2807967b7eb37fd11b03b7e3701e725af79c650d0812ff7213f8f882d9",
+      "tarRoot": "package/"
+    },
+    "picomatch-4.0.5.tgz": {
+      "package": "picomatch",
+      "version": "4.0.5",
+      "source": "registry",
+      "bytes": 24079,
+      "sha256": "e89c478225a42b3793bb4a39fd576de142c9829c26a5bd71782249e48b112f51",
+      "tarRoot": "package/"
+    },
+    "postcss-8.5.26.tgz": {
+      "package": "postcss",
+      "version": "8.5.26",
+      "source": "registry",
+      "bytes": 51997,
+      "sha256": "9ea29f58a51822c17bc7eb198d4f0fb2cd66fa02feb193efb6ece17ce011a882",
+      "tarRoot": "package/"
+    },
+    "quansync-1.0.0.tgz": {
+      "package": "quansync",
+      "version": "1.0.0",
+      "source": "registry",
+      "bytes": 5071,
+      "sha256": "79ff9faf2d1e62ce5fe30b70cbe5718e1bd6a69777f10d0a65a0d209c6da201a",
+      "tarRoot": "package/"
+    },
+    "quansync-fs-1.0.0.tgz": {
+      "package": "@quansync/fs",
+      "version": "1.0.0",
+      "source": "registry",
+      "bytes": 3328,
+      "sha256": "c149ea0326af5b2a833247083f806f8d5581d888113e6c162bb94697259d3866",
+      "tarRoot": "package/"
+    },
+    "resolve-pkg-maps-1.0.0.tgz": {
+      "package": "resolve-pkg-maps",
+      "version": "1.0.0",
+      "source": "registry",
+      "bytes": 5194,
+      "sha256": "4a7cbdb7054b1dd6e466067129be9577b495ff69d02064913e1723405db0df76",
+      "tarRoot": "package/"
+    },
+    "rolldown-1.2.5.tgz": {
+      "package": "rolldown",
+      "version": "1.2.5",
+      "source": "registry",
+      "bytes": 193849,
+      "sha256": "aa6922923f0bd399a7b21f7f6eec00f767f4447ae315dc80b7921f3bf16bd4d2",
+      "tarRoot": "package/"
+    },
+    "rolldown-binding-linux-x64-gnu-1.2.5.tgz": {
+      "package": "@rolldown/binding-linux-x64-gnu",
+      "version": "1.2.5",
+      "source": "registry",
+      "bytes": 8164234,
+      "sha256": "6cf144ba0ab021bd9cc139b0fe753db4c793d4846be4eb03b5bc90642da98571",
+      "tarRoot": "package/"
+    },
+    "rolldown-plugin-dts-0.27.14.tgz": {
+      "package": "rolldown-plugin-dts",
+      "version": "0.27.14",
+      "source": "registry",
+      "bytes": 30057,
+      "sha256": "91057acdbeea93b5899c8f045eeaf8dbf0c4fddd0aa11d77d53bd76f36d36ce5",
+      "tarRoot": "package/"
+    },
+    "rolldown-pluginutils-1.0.1.tgz": {
+      "package": "@rolldown/pluginutils",
+      "version": "1.0.1",
+      "source": "registry",
+      "bytes": 6681,
+      "sha256": "13fcb3423d37f95a8e861c172e4b62fd24f22412be4e942087367242476e3400",
+      "tarRoot": "package/"
+    },
+    "siginfo-2.0.0.tgz": {
+      "package": "siginfo",
+      "version": "2.0.0",
+      "source": "registry",
+      "bytes": 3064,
+      "sha256": "a20fd853c4514049964aca176d4198d58802b28dc481e82cb57f2101b2c7701b",
+      "tarRoot": "package/"
+    },
+    "source-map-js-1.2.1.tgz": {
+      "package": "source-map-js",
+      "version": "1.2.1",
+      "source": "registry",
+      "bytes": 35340,
+      "sha256": "f126a6f9fca487a43219d8cb8c3a955279187a966119d548eb5cd47e999d4853",
+      "tarRoot": "package/"
+    },
+    "stackback-0.0.2.tgz": {
+      "package": "stackback",
+      "version": "0.0.2",
+      "source": "registry",
+      "bytes": 3165,
+      "sha256": "3e663c82d1ccf9748ed446b648ec21a7dd6c5895ecf4a95310a60a320ca55858",
+      "tarRoot": "package/"
+    },
+    "standard-schema-spec-1.1.0.tgz": {
+      "package": "@standard-schema/spec",
+      "version": "1.1.0",
+      "source": "alpha1",
+      "bytes": 4178,
+      "sha256": "a7cb7268be280ab518d450f8c3b07c86f23417225c0ab53691ed59b3067cceaf",
+      "tarRoot": "package/"
+    },
+    "std-env-4.2.0.tgz": {
+      "package": "std-env",
+      "version": "4.2.0",
+      "source": "registry",
+      "bytes": 6351,
+      "sha256": "d3e2bc287e997da66639920c5f7b86c0ff3ecb69e332c7b14912150488e3a40a",
+      "tarRoot": "package/"
+    },
+    "tinybench-2.9.0.tgz": {
+      "package": "tinybench",
+      "version": "2.9.0",
+      "source": "registry",
+      "bytes": 13668,
+      "sha256": "3a38e953c2366359670fb41e7efae2d8a818ac12615fbea6f9d0614010582e39",
+      "tarRoot": "package/"
+    },
+    "tinyexec-1.3.0.tgz": {
+      "package": "tinyexec",
+      "version": "1.3.0",
+      "source": "registry",
+      "bytes": 9130,
+      "sha256": "8b08a81c6a960fa8591df6ec374058e686c89bf9f3c080a0d3cff123478ff3d4",
+      "tarRoot": "package/"
+    },
+    "tinyglobby-0.2.17.tgz": {
+      "package": "tinyglobby",
+      "version": "0.2.17",
+      "source": "registry",
+      "bytes": 7873,
+      "sha256": "afb4afae9175f8b873ac13e1d21cea0997a0bcb40c3598613a834490058cb562",
+      "tarRoot": "package/"
+    },
+    "tinyrainbow-3.1.1.tgz": {
+      "package": "tinyrainbow",
+      "version": "3.1.1",
+      "source": "registry",
+      "bytes": 3047,
+      "sha256": "cdb1b980964665438e90dd184d7cfbe2c1544a73b6cc949c92c2592cb8791744",
+      "tarRoot": "package/"
+    },
+    "tree-kill-1.2.2.tgz": {
+      "package": "tree-kill",
+      "version": "1.2.2",
+      "source": "registry",
+      "bytes": 3243,
+      "sha256": "4a188633a6c3f39f12dca8b38bd682081e499459f6f07f362996d3e860e66061",
+      "tarRoot": "package/"
+    },
+    "tsdown-0.22.14.tgz": {
+      "package": "tsdown",
+      "version": "0.22.14",
+      "source": "registry",
+      "bytes": 54671,
+      "sha256": "57b86b9d5385ac603d4d95de9dcafa3cdb50f8d3b64574070a624f62d19ef246",
+      "tarRoot": "package/"
+    },
+    "types-chai-5.2.3.tgz": {
+      "package": "@types/chai",
+      "version": "5.2.3",
+      "source": "registry",
+      "bytes": 9924,
+      "sha256": "5f0c52e34238e17d2d9a2d6e9b85530765afae645f265e0e14263ebeecdd7f94",
+      "tarRoot": "chai/"
+    },
+    "types-deep-eql-4.0.2.tgz": {
+      "package": "@types/deep-eql",
+      "version": "4.0.2",
+      "source": "registry",
+      "bytes": 2014,
+      "sha256": "b63d185ff2cd2223bd6962b12b10342df4c5a4c25fd20017d2d9f335c35f3607",
+      "tarRoot": "deep-eql/"
+    },
+    "types-estree-1.0.9.tgz": {
+      "package": "@types/estree",
+      "version": "1.0.9",
+      "source": "registry",
+      "bytes": 5930,
+      "sha256": "ec8f3c0dfb21497db5a3480c45a6cf6f9b18d3b337b2ea4d03e3ef2a9c2bb358",
+      "tarRoot": "estree/"
+    },
+    "types-node-22.20.1.tgz": {
+      "package": "@types/node",
+      "version": "22.20.1",
+      "source": "registry",
+      "bytes": 447075,
+      "sha256": "6f99aae8d4a2bdecdce5a41a922b10943316edd4e6e6d4350f442d6c1688485f",
+      "tarRoot": "node v22.20/"
+    },
+    "typescript-5.9.3.tgz": {
+      "package": "typescript",
+      "version": "5.9.3",
+      "source": "registry",
+      "bytes": 4377468,
+      "sha256": "10e108c9cf7d5f2879053dff18515fb405abf2ccef63eaaf017d9c571687a1d3",
+      "tarRoot": "package/"
+    },
+    "unconfig-core-7.5.0.tgz": {
+      "package": "unconfig-core",
+      "version": "7.5.0",
+      "source": "registry",
+      "bytes": 2583,
+      "sha256": "94d4ba5f47188808fa160eede68e0b39deb0fa82bd40db9fd2bdc233f915eed8",
+      "tarRoot": "package/"
+    },
+    "undici-types-6.21.0.tgz": {
+      "package": "undici-types",
+      "version": "6.21.0",
+      "source": "registry",
+      "bytes": 21020,
+      "sha256": "cfa1a9a5e18988850e548f4f6b629c58da32dc32bebb116e58ea301e516fd16d",
+      "tarRoot": "package/"
+    },
+    "verkit-0.3.2.tgz": {
+      "package": "verkit",
+      "version": "0.3.2",
+      "source": "registry",
+      "bytes": 14276,
+      "sha256": "6dd2d088432a8343aaa09c418d684280b641ddfa9555ca2553d7a538694e0373",
+      "tarRoot": "package/"
+    },
+    "vite-8.2.2.tgz": {
+      "package": "vite",
+      "version": "8.2.2",
+      "source": "registry",
+      "bytes": 574405,
+      "sha256": "99df542e1d7267c0da524bdb216ebc32a4dfefc17f8fe830067b62a1042fbeb7",
+      "tarRoot": "package/"
+    },
+    "vitest-4.1.11.tgz": {
+      "package": "vitest",
+      "version": "4.1.11",
+      "source": "registry",
+      "bytes": 475397,
+      "sha256": "81875725211b8c43a30213579456954603d471d022587ce0e6842d44d9ed162b",
+      "tarRoot": "package/"
+    },
+    "vitest-expect-4.1.11.tgz": {
+      "package": "@vitest/expect",
+      "version": "4.1.11",
+      "source": "registry",
+      "bytes": 24924,
+      "sha256": "503d668851ce760fb60bb2b4681452089d8658a5fbd2b1f626dece4c1fbcc57f",
+      "tarRoot": "package/"
+    },
+    "vitest-mocker-4.1.11.tgz": {
+      "package": "@vitest/mocker",
+      "version": "4.1.11",
+      "source": "registry",
+      "bytes": 56516,
+      "sha256": "5f42c3959636909c506885ef643f4a4e4d024bd7939934465f280c42164eb142",
+      "tarRoot": "package/"
+    },
+    "vitest-pretty-format-4.1.11.tgz": {
+      "package": "@vitest/pretty-format",
+      "version": "4.1.11",
+      "source": "registry",
+      "bytes": 12888,
+      "sha256": "4eff485284e6338a567b63be5f6a74c0b42b9e30e0164a8006d832c26130e51b",
+      "tarRoot": "package/"
+    },
+    "vitest-runner-4.1.11.tgz": {
+      "package": "@vitest/runner",
+      "version": "4.1.11",
+      "source": "registry",
+      "bytes": 48456,
+      "sha256": "335051b85fce0ad3788c67b84b7949835b5eeeb20b785d8e3741eb396fc23d58",
+      "tarRoot": "package/"
+    },
+    "vitest-snapshot-4.1.11.tgz": {
+      "package": "@vitest/snapshot",
+      "version": "4.1.11",
+      "source": "registry",
+      "bytes": 17411,
+      "sha256": "6893221f95ccea0c56dfbcc6e95ae2198fd086e6de5e11caf12baf1cf2b0c605",
+      "tarRoot": "package/"
+    },
+    "vitest-spy-4.1.11.tgz": {
+      "package": "@vitest/spy",
+      "version": "4.1.11",
+      "source": "registry",
+      "bytes": 9566,
+      "sha256": "9b15875da96e769a19b3c9e2c316459528c57b9c20168c5abaa1ce050b7c8490",
+      "tarRoot": "package/"
+    },
+    "vitest-utils-4.1.11.tgz": {
+      "package": "@vitest/utils",
+      "version": "4.1.11",
+      "source": "registry",
+      "bytes": 45447,
+      "sha256": "ac1150697c2b1b5b14322f3ac85de74a405228291de1265f2e453c6db9544ee6",
+      "tarRoot": "package/"
+    },
+    "why-is-node-running-2.3.0.tgz": {
+      "package": "why-is-node-running",
+      "version": "2.3.0",
+      "source": "registry",
+      "bytes": 3205,
+      "sha256": "d2f668f77953509d0079ef05617ac9f5b5f64ed194f8b05872ad12ba06ec9963",
+      "tarRoot": "package/"
+    },
+    "yuku-ast-0.8.7.tgz": {
+      "package": "yuku-ast",
+      "version": "0.8.7",
+      "source": "registry",
+      "bytes": 18124,
+      "sha256": "cf56e78f1f643a490f0dccc10123f56ffe2836ddd57ed49e92692f90c087ed23",
+      "tarRoot": "package/"
+    },
+    "yuku-codegen-0.8.7.tgz": {
+      "package": "yuku-codegen",
+      "version": "0.8.7",
+      "source": "registry",
+      "bytes": 16113,
+      "sha256": "5017f927c04181de201211360127e21c89dcbbd8c30e375f8f3850692d7219bb",
+      "tarRoot": "package/"
+    },
+    "yuku-codegen-binding-linux-x64-gnu-0.8.7.tgz": {
+      "package": "@yuku-codegen/binding-linux-x64-gnu",
+      "version": "0.8.7",
+      "source": "registry",
+      "bytes": 107688,
+      "sha256": "44cc5146dc22e6bb1b007a0ec7169ef68bd3df062cb31a42ba5e8c0b2c3029ba",
+      "tarRoot": "package/"
+    },
+    "yuku-parser-0.8.7.tgz": {
+      "package": "yuku-parser",
+      "version": "0.8.7",
+      "source": "registry",
+      "bytes": 12864,
+      "sha256": "1732615d83d1c2e6b55a24277248a1ac31027ddeeea826697319cd5a52742ed8",
+      "tarRoot": "package/"
+    },
+    "yuku-parser-binding-linux-x64-gnu-0.8.7.tgz": {
+      "package": "@yuku-parser/binding-linux-x64-gnu",
+      "version": "0.8.7",
+      "source": "registry",
+      "bytes": 307747,
+      "sha256": "d804dfa658840ed35173769892afab390bcf58252a061f55d869e86c0794c8e0",
+      "tarRoot": "package/"
+    },
+    "yuku-toolchain-types-0.8.7.tgz": {
+      "package": "@yuku-toolchain/types",
+      "version": "0.8.7",
+      "source": "registry",
+      "bytes": 8906,
+      "sha256": "dfd81dea3e595e4069836235f9e4aae847d68c2d864074b2a1f3131191819267",
+      "tarRoot": "package/"
+    },
+    "zod-4.5.4.tgz": {
+      "package": "zod",
+      "version": "4.5.4",
+      "source": "alpha1",
+      "bytes": 1062897,
+      "sha256": "9f0954bc97b03a23eed1768e8db2ff2362a2611071e3e82fd102b1b581832124",
+      "tarRoot": "package/"
+    }
+  },
+  "edges": {
+    "dsh-ainvestor@0.1.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-system-prompt": "@deepseek-ai/dsh-system-prompt@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-tools": "@deepseek-ai/dsh-tools@0.1.2-alpha.1"
+      },
+      "devDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/cosmokit": "@deepseek-ai/cosmokit@1.8.2",
+        "@deepseek-ai/dsh-agent": "@deepseek-ai/dsh-agent@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-attachment": "@deepseek-ai/dsh-attachment@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-brand": "@deepseek-ai/dsh-brand@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-code-runtime": "@deepseek-ai/dsh-code-runtime@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-llm": "@deepseek-ai/dsh-llm@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-scope": "@deepseek-ai/dsh-scope@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-session": "@deepseek-ai/dsh-session@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-system-prompt": "@deepseek-ai/dsh-system-prompt@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-timeout": "@deepseek-ai/dsh-timeout@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-tools": "@deepseek-ai/dsh-tools@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-typert-protocol": "@deepseek-ai/dsh-typert-protocol@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-user-approval": "@deepseek-ai/dsh-user-approval@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-util-crypto": "@deepseek-ai/dsh-util-crypto@0.1.2-alpha.1",
+        "@deepseek-ai/schemastery": "@deepseek-ai/schemastery@3.18.1",
+        "@standard-schema/spec": "@standard-schema/spec@1.1.0",
+        "@types/node": "@types/node@22.20.1",
+        "tsdown": "tsdown@0.22.14",
+        "typescript": "typescript@5.9.3",
+        "vitest": "vitest@4.1.11"
+      }
+    },
+    "@deepseek-ai/cordis@4.0.1": {
+      "dependencies": {
+        "@deepseek-ai/cosmokit": "@deepseek-ai/cosmokit@1.8.2",
+        "@standard-schema/spec": "@standard-schema/spec@1.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis-plugin-include": null,
+        "@deepseek-ai/cordis-plugin-loader": null
+      }
+    },
+    "@deepseek-ai/cosmokit@1.8.2": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@deepseek-ai/dsh-agent@0.1.2-alpha.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-llm": "@deepseek-ai/dsh-llm@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-scope": "@deepseek-ai/dsh-scope@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-session": "@deepseek-ai/dsh-session@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-system-prompt": "@deepseek-ai/dsh-system-prompt@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-typert-protocol": "@deepseek-ai/dsh-typert-protocol@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-attachment@0.1.2-alpha.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-brand": "@deepseek-ai/dsh-brand@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-brand@0.1.2-alpha.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-code-runtime@0.1.2-alpha.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-invariants@0.1.2-alpha.1": {
+      "dependencies": {
+        "@deepseek-ai/schemastery": "@deepseek-ai/schemastery@3.18.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1"
+      }
+    },
+    "@deepseek-ai/dsh-llm@0.1.2-alpha.1": {
+      "dependencies": {
+        "@deepseek-ai/dsh-util-crypto": "@deepseek-ai/dsh-util-crypto@0.1.2-alpha.1",
+        "@deepseek-ai/schemastery": "@deepseek-ai/schemastery@3.18.1",
+        "zod": "zod@4.5.4"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-attachment": "@deepseek-ai/dsh-attachment@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-brand": "@deepseek-ai/dsh-brand@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-timeout": "@deepseek-ai/dsh-timeout@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-typert-protocol": "@deepseek-ai/dsh-typert-protocol@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-scope@0.1.2-alpha.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-session@0.1.2-alpha.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-brand": "@deepseek-ai/dsh-brand@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-llm": "@deepseek-ai/dsh-llm@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-scope": "@deepseek-ai/dsh-scope@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-typert-protocol": "@deepseek-ai/dsh-typert-protocol@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-system-prompt@0.1.2-alpha.1": {
+      "dependencies": {
+        "@deepseek-ai/schemastery": "@deepseek-ai/schemastery@3.18.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-llm": "@deepseek-ai/dsh-llm@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-scope": "@deepseek-ai/dsh-scope@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-timeout@0.1.2-alpha.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-tools@0.1.2-alpha.1": {
+      "dependencies": {
+        "@deepseek-ai/schemastery": "@deepseek-ai/schemastery@3.18.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-agent": "@deepseek-ai/dsh-agent@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-code-runtime": "@deepseek-ai/dsh-code-runtime@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-llm": "@deepseek-ai/dsh-llm@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-scope": "@deepseek-ai/dsh-scope@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-session": "@deepseek-ai/dsh-session@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-system-prompt": "@deepseek-ai/dsh-system-prompt@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-user-approval": "@deepseek-ai/dsh-user-approval@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-typert-protocol@0.1.2-alpha.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-user-approval@0.1.2-alpha.1": {
+      "dependencies": {
+        "@deepseek-ai/schemastery": "@deepseek-ai/schemastery@3.18.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-agent": "@deepseek-ai/dsh-agent@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-brand": "@deepseek-ai/dsh-brand@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-llm": "@deepseek-ai/dsh-llm@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-scope": "@deepseek-ai/dsh-scope@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-session": "@deepseek-ai/dsh-session@0.1.2-alpha.1",
+        "@deepseek-ai/dsh-system-prompt": "@deepseek-ai/dsh-system-prompt@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/dsh-util-crypto@0.1.2-alpha.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@deepseek-ai/cordis": "@deepseek-ai/cordis@4.0.1",
+        "@deepseek-ai/dsh-invariants": "@deepseek-ai/dsh-invariants@0.1.2-alpha.1"
+      }
+    },
+    "@deepseek-ai/schemastery@3.18.1": {
+      "dependencies": {
+        "@deepseek-ai/cosmokit": "@deepseek-ai/cosmokit@1.8.2",
+        "@standard-schema/spec": "@standard-schema/spec@1.1.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@jridgewell/sourcemap-codec@1.6.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@oxc-project/types@0.146.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@quansync/fs@1.0.0": {
+      "dependencies": {
+        "quansync": "quansync@1.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@rolldown/binding-linux-x64-gnu@1.2.5": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@rolldown/pluginutils@1.0.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@standard-schema/spec@1.1.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@types/chai@5.2.3": {
+      "dependencies": {
+        "@types/deep-eql": "@types/deep-eql@4.0.2",
+        "assertion-error": "assertion-error@2.0.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@types/deep-eql@4.0.2": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@types/estree@1.0.9": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@types/node@22.20.1": {
+      "dependencies": {
+        "undici-types": "undici-types@6.21.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@vitest/expect@4.1.11": {
+      "dependencies": {
+        "@standard-schema/spec": "@standard-schema/spec@1.1.0",
+        "@types/chai": "@types/chai@5.2.3",
+        "@vitest/spy": "@vitest/spy@4.1.11",
+        "@vitest/utils": "@vitest/utils@4.1.11",
+        "chai": "chai@6.2.2",
+        "tinyrainbow": "tinyrainbow@3.1.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@vitest/mocker@4.1.11": {
+      "dependencies": {
+        "@vitest/spy": "@vitest/spy@4.1.11",
+        "estree-walker": "estree-walker@3.0.3",
+        "magic-string": "magic-string@0.30.21"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "msw": null,
+        "vite": "vite@8.2.2"
+      }
+    },
+    "@vitest/pretty-format@4.1.11": {
+      "dependencies": {
+        "tinyrainbow": "tinyrainbow@3.1.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@vitest/runner@4.1.11": {
+      "dependencies": {
+        "@vitest/utils": "@vitest/utils@4.1.11",
+        "pathe": "pathe@2.0.3"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@vitest/snapshot@4.1.11": {
+      "dependencies": {
+        "@vitest/pretty-format": "@vitest/pretty-format@4.1.11",
+        "@vitest/utils": "@vitest/utils@4.1.11",
+        "magic-string": "magic-string@0.30.21",
+        "pathe": "pathe@2.0.3"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@vitest/spy@4.1.11": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@vitest/utils@4.1.11": {
+      "dependencies": {
+        "@vitest/pretty-format": "@vitest/pretty-format@4.1.11",
+        "convert-source-map": "convert-source-map@2.0.0",
+        "tinyrainbow": "tinyrainbow@3.1.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@yuku-codegen/binding-linux-x64-gnu@0.8.7": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@yuku-parser/binding-linux-x64-gnu@0.8.7": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "@yuku-toolchain/types@0.8.7": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "ansis@4.3.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "assertion-error@2.0.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "cac@7.0.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "chai@6.2.2": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "convert-source-map@2.0.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "defu@6.1.7": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "detect-libc@2.1.2": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "dts-resolver@3.0.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "oxc-resolver": null
+      }
+    },
+    "empathic@2.0.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "es-module-lexer@2.3.2": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "estree-walker@3.0.3": {
+      "dependencies": {
+        "@types/estree": "@types/estree@1.0.9"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "expect-type@1.4.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "fdir@6.5.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "picomatch": "picomatch@4.0.5"
+      }
+    },
+    "get-tsconfig@5.0.0-beta.5": {
+      "dependencies": {
+        "resolve-pkg-maps": "resolve-pkg-maps@1.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "hookable@6.1.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "import-without-cache@0.4.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "lightningcss@1.33.0": {
+      "dependencies": {
+        "detect-libc": "detect-libc@2.1.2"
+      },
+      "optionalDependencies": {
+        "lightningcss-android-arm64": null,
+        "lightningcss-darwin-arm64": null,
+        "lightningcss-darwin-x64": null,
+        "lightningcss-freebsd-x64": null,
+        "lightningcss-linux-arm-gnueabihf": null,
+        "lightningcss-linux-arm64-gnu": null,
+        "lightningcss-linux-arm64-musl": null,
+        "lightningcss-linux-x64-gnu": "lightningcss-linux-x64-gnu@1.33.0",
+        "lightningcss-linux-x64-musl": null,
+        "lightningcss-win32-arm64-msvc": null,
+        "lightningcss-win32-x64-msvc": null
+      },
+      "peerDependencies": {}
+    },
+    "lightningcss-linux-x64-gnu@1.33.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "magic-string@0.30.21": {
+      "dependencies": {
+        "@jridgewell/sourcemap-codec": "@jridgewell/sourcemap-codec@1.6.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "nanoid@3.3.18": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "obug@2.1.4": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "pathe@2.0.3": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "picocolors@1.1.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "picomatch@4.0.5": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "postcss@8.5.26": {
+      "dependencies": {
+        "nanoid": "nanoid@3.3.18",
+        "picocolors": "picocolors@1.1.1",
+        "source-map-js": "source-map-js@1.2.1"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "quansync@1.0.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "resolve-pkg-maps@1.0.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "rolldown@1.2.5": {
+      "dependencies": {
+        "@oxc-project/types": "@oxc-project/types@0.146.0",
+        "@rolldown/pluginutils": "@rolldown/pluginutils@1.0.1"
+      },
+      "optionalDependencies": {
+        "@rolldown/binding-android-arm-eabi": null,
+        "@rolldown/binding-android-arm64": null,
+        "@rolldown/binding-darwin-arm64": null,
+        "@rolldown/binding-darwin-x64": null,
+        "@rolldown/binding-freebsd-x64": null,
+        "@rolldown/binding-linux-arm-gnueabihf": null,
+        "@rolldown/binding-linux-arm64-gnu": null,
+        "@rolldown/binding-linux-arm64-musl": null,
+        "@rolldown/binding-linux-ppc64-gnu": null,
+        "@rolldown/binding-linux-s390x-gnu": null,
+        "@rolldown/binding-linux-x64-gnu": "@rolldown/binding-linux-x64-gnu@1.2.5",
+        "@rolldown/binding-linux-x64-musl": null,
+        "@rolldown/binding-openharmony-arm64": null,
+        "@rolldown/binding-win32-arm64-msvc": null,
+        "@rolldown/binding-win32-x64-msvc": null
+      },
+      "peerDependencies": {}
+    },
+    "rolldown-plugin-dts@0.27.14": {
+      "dependencies": {
+        "dts-resolver": "dts-resolver@3.0.0",
+        "get-tsconfig": "get-tsconfig@5.0.0-beta.5",
+        "obug": "obug@2.1.4",
+        "yuku-ast": "yuku-ast@0.8.7",
+        "yuku-codegen": "yuku-codegen@0.8.7",
+        "yuku-parser": "yuku-parser@0.8.7"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@typescript/native-preview": null,
+        "@volar/typescript": null,
+        "rolldown": "rolldown@1.2.5",
+        "typescript": "typescript@5.9.3",
+        "vue-tsc": null
+      }
+    },
+    "siginfo@2.0.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "source-map-js@1.2.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "stackback@0.0.2": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "std-env@4.2.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "tinybench@2.9.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "tinyexec@1.3.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "tinyglobby@0.2.17": {
+      "dependencies": {
+        "fdir": "fdir@6.5.0",
+        "picomatch": "picomatch@4.0.5"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "tinyrainbow@3.1.1": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "tree-kill@1.2.2": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "tsdown@0.22.14": {
+      "dependencies": {
+        "ansis": "ansis@4.3.1",
+        "cac": "cac@7.0.0",
+        "defu": "defu@6.1.7",
+        "empathic": "empathic@2.0.1",
+        "hookable": "hookable@6.1.1",
+        "import-without-cache": "import-without-cache@0.4.0",
+        "obug": "obug@2.1.4",
+        "picomatch": "picomatch@4.0.5",
+        "rolldown": "rolldown@1.2.5",
+        "rolldown-plugin-dts": "rolldown-plugin-dts@0.27.14",
+        "tinyexec": "tinyexec@1.3.0",
+        "tinyglobby": "tinyglobby@0.2.17",
+        "tree-kill": "tree-kill@1.2.2",
+        "unconfig-core": "unconfig-core@7.5.0",
+        "verkit": "verkit@0.3.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@arethetypeswrong/core": null,
+        "@tsdown/css": null,
+        "@tsdown/exe": null,
+        "@vitejs/devtools": null,
+        "publint": null,
+        "tsx": null,
+        "typescript": "typescript@5.9.3",
+        "unplugin-unused": null,
+        "unrun": null
+      }
+    },
+    "typescript@5.9.3": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "unconfig-core@7.5.0": {
+      "dependencies": {
+        "@quansync/fs": "@quansync/fs@1.0.0",
+        "quansync": "quansync@1.0.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "undici-types@6.21.0": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "verkit@0.3.2": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "vite@8.2.2": {
+      "dependencies": {
+        "lightningcss": "lightningcss@1.33.0",
+        "picomatch": "picomatch@4.0.5",
+        "postcss": "postcss@8.5.26",
+        "rolldown": "rolldown@1.2.5",
+        "tinyglobby": "tinyglobby@0.2.17"
+      },
+      "optionalDependencies": {
+        "fsevents": null
+      },
+      "peerDependencies": {
+        "@types/node": "@types/node@22.20.1",
+        "@vitejs/devtools": null,
+        "esbuild": null,
+        "jiti": null,
+        "less": null,
+        "sass": null,
+        "sass-embedded": null,
+        "stylus": null,
+        "sugarss": null,
+        "terser": null,
+        "tsx": null,
+        "yaml": null
+      }
+    },
+    "vitest@4.1.11": {
+      "dependencies": {
+        "@vitest/expect": "@vitest/expect@4.1.11",
+        "@vitest/mocker": "@vitest/mocker@4.1.11",
+        "@vitest/pretty-format": "@vitest/pretty-format@4.1.11",
+        "@vitest/runner": "@vitest/runner@4.1.11",
+        "@vitest/snapshot": "@vitest/snapshot@4.1.11",
+        "@vitest/spy": "@vitest/spy@4.1.11",
+        "@vitest/utils": "@vitest/utils@4.1.11",
+        "es-module-lexer": "es-module-lexer@2.3.2",
+        "expect-type": "expect-type@1.4.0",
+        "magic-string": "magic-string@0.30.21",
+        "obug": "obug@2.1.4",
+        "pathe": "pathe@2.0.3",
+        "picomatch": "picomatch@4.0.5",
+        "std-env": "std-env@4.2.0",
+        "tinybench": "tinybench@2.9.0",
+        "tinyexec": "tinyexec@1.3.0",
+        "tinyglobby": "tinyglobby@0.2.17",
+        "tinyrainbow": "tinyrainbow@3.1.1",
+        "vite": "vite@8.2.2",
+        "why-is-node-running": "why-is-node-running@2.3.0"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {
+        "@edge-runtime/vm": null,
+        "@opentelemetry/api": null,
+        "@types/node": "@types/node@22.20.1",
+        "@vitest/browser-playwright": null,
+        "@vitest/browser-preview": null,
+        "@vitest/browser-webdriverio": null,
+        "@vitest/coverage-istanbul": null,
+        "@vitest/coverage-v8": null,
+        "@vitest/ui": null,
+        "happy-dom": null,
+        "jsdom": null,
+        "vite": "vite@8.2.2"
+      }
+    },
+    "why-is-node-running@2.3.0": {
+      "dependencies": {
+        "siginfo": "siginfo@2.0.0",
+        "stackback": "stackback@0.0.2"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "yuku-ast@0.8.7": {
+      "dependencies": {
+        "@yuku-toolchain/types": "@yuku-toolchain/types@0.8.7"
+      },
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    },
+    "yuku-codegen@0.8.7": {
+      "dependencies": {
+        "@yuku-toolchain/types": "@yuku-toolchain/types@0.8.7"
+      },
+      "optionalDependencies": {
+        "@yuku-codegen/binding-android-arm64": null,
+        "@yuku-codegen/binding-darwin-arm64": null,
+        "@yuku-codegen/binding-darwin-x64": null,
+        "@yuku-codegen/binding-freebsd-x64": null,
+        "@yuku-codegen/binding-linux-arm-gnu": null,
+        "@yuku-codegen/binding-linux-arm-musl": null,
+        "@yuku-codegen/binding-linux-arm64-gnu": null,
+        "@yuku-codegen/binding-linux-arm64-musl": null,
+        "@yuku-codegen/binding-linux-x64-gnu": "@yuku-codegen/binding-linux-x64-gnu@0.8.7",
+        "@yuku-codegen/binding-linux-x64-musl": null,
+        "@yuku-codegen/binding-win32-arm64": null,
+        "@yuku-codegen/binding-win32-x64": null
+      },
+      "peerDependencies": {}
+    },
+    "yuku-parser@0.8.7": {
+      "dependencies": {
+        "@yuku-toolchain/types": "@yuku-toolchain/types@0.8.7",
+        "yuku-ast": "yuku-ast@0.8.7"
+      },
+      "optionalDependencies": {
+        "@yuku-parser/binding-android-arm64": null,
+        "@yuku-parser/binding-darwin-arm64": null,
+        "@yuku-parser/binding-darwin-x64": null,
+        "@yuku-parser/binding-freebsd-x64": null,
+        "@yuku-parser/binding-linux-arm-gnu": null,
+        "@yuku-parser/binding-linux-arm-musl": null,
+        "@yuku-parser/binding-linux-arm64-gnu": null,
+        "@yuku-parser/binding-linux-arm64-musl": null,
+        "@yuku-parser/binding-linux-x64-gnu": "@yuku-parser/binding-linux-x64-gnu@0.8.7",
+        "@yuku-parser/binding-linux-x64-musl": null,
+        "@yuku-parser/binding-win32-arm64": null,
+        "@yuku-parser/binding-win32-x64": null
+      },
+      "peerDependencies": {}
+    },
+    "zod@4.5.4": {
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peerDependencies": {}
+    }
+  },
+  "regenerationProcedure": [
+    "Use a clean checkout of the recorded tag and verify git rev-parse HEAD equals the recorded commit.",
+    "Install and build the official checkout with its pinned package manager and official build scripts.",
+    "Run pnpm pack --pack-destination against each alpha.1 package in the recorded closure; do not edit package manifests or add source stubs.",
+    "Resolve the repository lockfile recursively on the recorded platform from the public npm registry, preserving exact package versions and package-manager tarball paths.",
+    "Replace the matching files in fixtures/alpha1/tarballs, then recompute each tarball byte size, SHA-256, root path, and versioned dependency edge before running pnpm run pack:check.",
+    "If an official manifest declares an unshipped target, add an explicit entry to upstreamArtifactGaps only after proving it is not used by this plugin or its runtime closure."
+  ]
+}
