@@ -4,6 +4,8 @@ AiInvestor analysis copilot for [DeepSeek Harness](https://github.com/deepseek-a
 
 This release preserves all 13 read-only analysis tools and methodology semantics, and enforces explicit backend ownership.
 
+Compatibility: this release requires DeepSeek Harness `0.1.2-alpha.4` and `@deepseek-ai/cordis@4.0.2`; it is not compatible with Alpha.1–Alpha.3. Users on older runtimes must keep the last plugin tag built for that runtime.
+
 ## What it registers
 
 | Tool | Backend route | Purpose |
@@ -145,14 +147,14 @@ git -C ~/Workstation/dsh-ainvestor diff --check
 pnpm run typecheck
 pnpm run build
 pnpm run test
-pnpm run pack:check   # hard gate: 87 exact alpha.1/registry fixtures, fresh invalid-registry offline pnpm, Host apply/invariants, and plugin tgz SHA
+pnpm run pack:check   # hard gate: exact Alpha.4/registry fixture closure, fresh invalid-registry offline pnpm, Host apply, and plugin tgz
 ```
 
 ## Backend API / version provenance gap
 
 - The backend at `{baseUrl}` (AiInvestor-dsh FastAPI on `/live` etc.) is still an out-of-tree Python service without a pinned API version or schema file in this repo. Spawn mode additionally requires it to read `DSH_AINVESTOR_INSTANCE_TOKEN` and echo the exact value in `x-dsh-ainvestor-instance-token` on successful `/live`; attach mode uses ordinary `/live`. Tool response validation checks status/size/JSON fields, but there is no checked-in OpenAPI spec or version gate.
 - No `AiInvestor-dsh` commit or build artifact is vendored here; the plugin assumes the backend implements the 13 routes and spawn handshake listed above. Pinning that backend's commit and adding an out-of-tree contract test fixture remains open.
-- DSH Tool and System Prompt types are imported from the official alpha.1 package artifacts: `@deepseek-ai/dsh-tools@0.1.2-alpha.1` and `@deepseek-ai/dsh-system-prompt@0.1.2-alpha.1`. Their complete published runtime/type closure plus the recursive registry closure (87 real tarballs total) is recorded under `fixtures/alpha1/tarballs/` and checked by `pnpm run pack:check`.
+- DSH Tool and System Prompt types are imported from the official Alpha.4 package artifacts: `@deepseek-ai/dsh-tools@0.1.2-alpha.4` and `@deepseek-ai/dsh-system-prompt@0.1.2-alpha.4`. Their complete published runtime/type closure plus the recursive registry closure is recorded under `fixtures/alpha4/tarballs/` and checked by `pnpm run pack:check`.
 
 ## Out of scope
 
@@ -165,7 +167,7 @@ pnpm run pack:check   # hard gate: 87 exact alpha.1/registry fixtures, fresh inv
 
 ## Release installation (Latest)
 
-Host-only A-share analysis tools and methodology prompt; the backend is explicitly attached or spawned by configuration. The release artifact targets DeepSeek Harness 0.1.2-alpha.1 and contains built Host/Client files only; it has no sibling-repository source, workstation path, link:, or workspace: dependency.
+Host-only A-share analysis tools and methodology prompt; the backend is explicitly attached or spawned by configuration. The release artifact targets DeepSeek Harness 0.1.2-alpha.4 and contains built Host/Client files only; it has no sibling-repository source, workstation path, link:, or workspace: dependency.
 
 Latest installation (the URL never contains a version):
 
@@ -178,7 +180,7 @@ Fixed-version installation:
 
 ~~~sh
 dsh plugin --profile web add --force \
-  https://github.com/NOirBRight/dsh-ainvestor/releases/download/v0.1.0/dsh-ainvestor.tgz
+  https://github.com/NOirBRight/dsh-ainvestor/releases/download/v0.1.1/dsh-ainvestor.tgz
 ~~~
 
 Update, uninstall, and verify:
@@ -196,6 +198,6 @@ dsh plugin --profile web remove dsh-ainvestor
 
 Configuration: use the plugin section in Settings for Web UI plugins, or the profile dsh.profile.bundles entry for Host-only plugins. Start with this README's minimal YAML/JSON example and provide credentials/backend addresses explicitly.
 
-Rollback: rerun the fixed v0.1.0 command, verify the profile list, then restart the Web service once. Inspect journalctl --user -u dsh-web.service and dsh plugin --profile web doctor; never put a source checkout in the production profile.
+Rollback: rerun the fixed v0.1.1 command, verify the profile list, then restart the Web service once. Inspect journalctl --user -u dsh-web.service and dsh plugin --profile web doctor; never put a source checkout in the production profile.
 
-Release and integrity: [v0.1.0](https://github.com/NOirBRight/dsh-ainvestor/releases/tag/v0.1.0) · [SHA256SUMS](https://github.com/NOirBRight/dsh-ainvestor/releases/download/v0.1.0/SHA256SUMS).
+Release and integrity: [v0.1.1](https://github.com/NOirBRight/dsh-ainvestor/releases/tag/v0.1.1) · [SHA256SUMS](https://github.com/NOirBRight/dsh-ainvestor/releases/download/v0.1.1/SHA256SUMS).

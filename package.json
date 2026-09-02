@@ -1,6 +1,6 @@
 {
   "name": "dsh-ainvestor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AiInvestor analysis copilot for DeepSeek Harness: A-share Chan theory, composite scoring, financials, and local investment knowledge base as agent tools",
   "type": "module",
   "publishConfig": {
@@ -29,10 +29,11 @@
   "scripts": {
     "build": "tsc -p tsconfig.json && tsdown",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "check": "pnpm run typecheck",
+    "check": "pnpm run build && pnpm run test && pnpm run pack:check",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "pack:check": "node scripts/verify-pack.mjs"
+    "pack:check": "DSH_ALPHA4_PLUGIN_ROOT=\"$PWD\" node scripts/check-alpha4-pack.mjs",
+    "fixtures:alpha4": "DSH_ALPHA4_PLUGIN_ROOT=\"$PWD\" node scripts/prepare-alpha4-fixtures.mjs"
   },
   "engines": {
     "node": "^22.19.0 || >=24.0.0"
@@ -44,32 +45,36 @@
     }
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.1",
-    "@deepseek-ai/dsh-tools": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-system-prompt": "0.1.2-alpha.1"
+    "@deepseek-ai/cordis": "4.0.2",
+    "@deepseek-ai/dsh-tools": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-system-prompt": "0.1.2-alpha.4"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "4.0.1",
+    "@deepseek-ai/cordis": "4.0.2",
     "@deepseek-ai/cosmokit": "1.8.2",
-    "@deepseek-ai/dsh-agent": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-attachment": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-brand": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-code-runtime": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-invariants": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-llm": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-scope": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-session": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-system-prompt": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-timeout": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-tools": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-typert-protocol": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-user-approval": "0.1.2-alpha.1",
-    "@deepseek-ai/dsh-util-crypto": "0.1.2-alpha.1",
+    "@deepseek-ai/dsh-agent": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-attachment": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-brand": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-code-runtime": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-invariants": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-llm": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-scope": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-session": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-system-prompt": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-timeout": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-tools": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-typert-protocol": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-user-approval": "0.1.2-alpha.4",
+    "@deepseek-ai/dsh-util-crypto": "0.1.2-alpha.4",
     "@deepseek-ai/schemastery": "3.18.1",
     "@standard-schema/spec": "1.1.0",
     "@types/node": "^22.0.0",
     "tsdown": "^0.22.2",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.8",
+    "@deepseek-ai/dsh-util-values": "0.1.2-alpha.4"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-util-values": "0.1.2-alpha.4"
   }
 }
