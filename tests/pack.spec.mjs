@@ -3,7 +3,7 @@ import { existsSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from 'nod
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
-import { allowlistedEnvironment, assertNoManifestAliases, removeTemp, verifyFixtureHash, withTempCleanup } from '../scripts/verify-pack.mjs'
+import { allowlistedEnvironment, assertNoManifestAliases, removeTemp, verifyFixtureHash, withTempCleanup } from '../scripts/pack-test-utils.mjs'
 
 describe('pack verifier negative checks', () => {
   const temporaryRoots = []

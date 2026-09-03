@@ -15,6 +15,7 @@ import { Config as ConfigSchema, resolveBackendSpec } from './config.ts'
 import type { BackendSpec } from './config.ts'
 import { METHODOLOGY_SECTION } from './methodology.ts'
 import { createTools } from './tools.ts'
+import { allowDshRuntime } from './compatibility.ts'
 
 /** Cordis loader name. */
 export const name = 'dsh-ainvestor'
@@ -43,6 +44,8 @@ function log(line: string): void {
  * @throws {Error} If configuration, backend startup, registration, or rollback fails.
  */
 export async function apply(ctx: Context, rawConfig: unknown): Promise<void> {
+  if (!allowDshRuntime(ctx.logger, 'dsh-ainvestor', ['@deepseek-ai/dsh-tools'])) return
+
   const spec = resolveBackendSpec(rawConfig)
   let startup: Promise<void> | undefined
 

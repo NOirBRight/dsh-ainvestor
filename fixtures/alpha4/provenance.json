@@ -7,7 +7,7 @@
     "commit": "4e84901e6471b79ec0338099867ebb4606d12bb5"
   },
   "roots": [
-    "dsh-ainvestor@0.1.1"
+    "dsh-ainvestor@0.1.2"
   ],
   "packages": [
     {
@@ -978,35 +978,35 @@
       "optional": false
     },
     {
-      "from": "dsh-ainvestor@0.1.1",
+      "from": "dsh-ainvestor@0.1.2",
       "to": "@deepseek-ai/cordis@4.0.2",
       "dependency": "@deepseek-ai/cordis",
       "section": "peerDependencies",
-      "specifier": "4.0.2",
+      "specifier": ">=4.0.2 <5.0.0",
       "optional": false
     },
     {
-      "from": "dsh-ainvestor@0.1.1",
+      "from": "dsh-ainvestor@0.1.2",
       "to": "@deepseek-ai/dsh-system-prompt@0.1.2-alpha.4",
       "dependency": "@deepseek-ai/dsh-system-prompt",
       "section": "peerDependencies",
-      "specifier": "0.1.2-alpha.4",
+      "specifier": ">=0.1.2-alpha.4 <1.0.0 || 0.1.2-alpha.5 || 0.1.2-rc.1",
       "optional": false
     },
     {
-      "from": "dsh-ainvestor@0.1.1",
+      "from": "dsh-ainvestor@0.1.2",
       "to": "@deepseek-ai/dsh-tools@0.1.2-alpha.4",
       "dependency": "@deepseek-ai/dsh-tools",
       "section": "peerDependencies",
-      "specifier": "0.1.2-alpha.4",
+      "specifier": ">=0.1.2-alpha.4 <1.0.0 || 0.1.2-alpha.5 || 0.1.2-rc.1",
       "optional": false
     },
     {
-      "from": "dsh-ainvestor@0.1.1",
+      "from": "dsh-ainvestor@0.1.2",
       "to": "@deepseek-ai/dsh-util-values@0.1.2-alpha.4",
       "dependency": "@deepseek-ai/dsh-util-values",
       "section": "dependencies",
-      "specifier": "0.1.2-alpha.4",
+      "specifier": ">=0.1.2-alpha.4 <1.0.0 || 0.1.2-alpha.5 || 0.1.2-rc.1",
       "optional": false
     },
     {

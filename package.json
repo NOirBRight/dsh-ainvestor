@@ -1,6 +1,6 @@
 {
   "name": "dsh-ainvestor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "AiInvestor analysis copilot for DeepSeek Harness: A-share Chan theory, composite scoring, financials, and local investment knowledge base as agent tools",
   "type": "module",
   "publishConfig": {
@@ -42,12 +42,18 @@
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.1.2-alpha.4": "compatible",
+        "0.1.2-rc.1": "compatible"
+      }
     }
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "4.0.2",
-    "@deepseek-ai/dsh-tools": "0.1.2-alpha.4",
-    "@deepseek-ai/dsh-system-prompt": "0.1.2-alpha.4"
+    "@deepseek-ai/cordis": ">=4.0.2 <5.0.0",
+    "@deepseek-ai/dsh-tools": ">=0.1.2-alpha.4 <1.0.0 || 0.1.2-alpha.5 || 0.1.2-rc.1",
+    "@deepseek-ai/dsh-system-prompt": ">=0.1.2-alpha.4 <1.0.0 || 0.1.2-alpha.5 || 0.1.2-rc.1"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "4.0.2",
@@ -75,6 +81,6 @@
     "@deepseek-ai/dsh-util-values": "0.1.2-alpha.4"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-util-values": "0.1.2-alpha.4"
+    "@deepseek-ai/dsh-util-values": ">=0.1.2-alpha.4 <1.0.0 || 0.1.2-alpha.5 || 0.1.2-rc.1"
   }
 }

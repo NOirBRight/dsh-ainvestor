@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@deepseek-ai/dsh-util-values':
-        specifier: 0.1.2-alpha.4
+        specifier: '>=0.1.2-alpha.4 <1.0.0 || 0.1.2-alpha.5 || 0.1.2-rc.1'
         version: 0.1.2-alpha.4(@deepseek-ai/cordis@4.0.2)
     devDependencies:
       '@deepseek-ai/cordis':
